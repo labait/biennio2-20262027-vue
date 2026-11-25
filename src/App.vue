@@ -4,7 +4,6 @@ import { ref, provide } from 'vue'
 
 
 import Headline from './components/Headline.vue'
-import HomeView from './views/HomeView.vue'
 
 const items = [
   { id: 1, favorite: true, title: 'Project 1', description: 'Description of Project 1', image: 'https://picsum.photos/800/600?v=1' },
@@ -18,7 +17,12 @@ provide('items', items)
 
 <template>
   <main class="min-h-screen flex flex-col items-center justify-center px-4">
-    <Headline />
-    <HomeView />
+    <RouterLink to="/">
+      <Headline />
+    </RouterLink>
+    <nav class="mb-8">
+      <RouterLink to="/portfolio" class="underline hover:no-underline">Portfolio</RouterLink>
+    </nav>
+    <RouterView />
   </main>
 </template>
