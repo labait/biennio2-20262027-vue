@@ -1,11 +1,8 @@
 <script setup>
+import { inject } from 'vue'
 import Item from '../components/Item.vue'
-const items = [
-  { id: 1, favorite: true, title: 'Project 1', description: 'Description of Project 1', image: 'https://picsum.photos/800/600?v=1' },
-  { id: 2, favorite: false, title: 'Project 2', description: 'Description of Project 2', image: 'https://picsum.photos/800/600?v=2' },
-  { id: 3, favorite: true, title: 'Project 3', description: 'Description of Project 3', image: 'https://picsum.photos/800/600?v=3' },
-  { id: 4, favorite: false, title: 'Project 4', description: 'Description of Project 4', image: 'https://picsum.photos/800/600' }
-]
+
+const items = inject('items')
 </script>
 
 <template>
